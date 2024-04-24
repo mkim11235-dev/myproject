@@ -1,82 +1,177 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  </head>
-  <body>
-    <style>
-        .carousel-item {
-            height:32rem;
-            background:#777;
-            color:white;
-            position: relative;
-            background-position: center;
-            background-size: cover;
+{% extends "nav.html" %}
 
+{% block title %}
+Landing
+{% endblock %}
 
+{% block main %}
+    <div class="container-where-i-put-things">
 
-        }
-        .container{
-            position: absolute;
-            bottom:0;
-            left:0;
-            right:0;
-            padding-bottom:50px;
-        }
-    </style>
-    <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-            <li data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></li>
-            <li data-bs-target="#myCarousel" data-bs-slide-to="1"></li>
-            <li data-bs-target="#myCarousel" data-bs-slide-to="2"></li>
+        <style>
+            /*styles for each carousel item*/
+            .carousel-item {
+                position: relative;
+                height: 32rem;
+                color:white;
+                background-position: left;
+                background-size: cover;
+                background: black;
+
+            }
+            /*styles for each container */
+            .container{
+                position: absolute;
+                bottom:0;
+                left:0;
+                right:0;
+                padding-bottom:50px;
+            }
+            /*styles for overlay image*/
+            .overlay-image {
+                position: absolute;
+                bottom:0;
+                left:0;
+                right:0;
+                top:0;
+                background-position: center;
+                background-size: contain;
+                background-repeat: no-repeat;
+                width: 100%;
+            }
+            .overflow-auto {
+                margin: 0 auto;
+                width: 50%;
+                margin-top: 5%
+            }
+            h1{
+                text-align: center;
+                font-family: 'Lugrasimo';
+            }
+            p{
+                font-family: 'Cormorant Garamond';
+            }
+            h2{
+                font-family: 'Cormorant Garamond';
+                font-weight: 700;
+            }
+        </style>
+        
+        <!--global container with all the carousel content-->
+        <div id="myCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+            <!--carousel arrows, update when you add new images-->
+            <div class="carousel-indicators">
+                <li data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></li>
+                <li data-bs-target="#myCarousel" data-bs-slide-to="1"></li>
+                <li data-bs-target="#myCarousel" data-bs-slide-to="2"></li>
+                <li data-bs-target="#myCarousel" data-bs-slide-to="3"></li>
+                <li data-bs-target="#myCarousel" data-bs-slide-to="4"></li>
+            </div>
+            <!--this container has the individual carousel image content-->
+            <div class="carousel-inner">
+                <!--copy paste this chunk when you need to add a new image!-->
+                <div class="carousel-item active">
+                    <div class="overlay-image" style="background-image:url(/static/images/oandd5.jpeg);">
+                    </div>
+                    <div class="container">
+                        <h2>Desdemona (c.1888). Frederic Leighton (British, 1830-1896). Oil on canvas. -</h2>
+                        <p>A picture of naivete, gazing upon something far off in the distance.</p>
+                    </div>
+                </div>
+                <!--second slide-->
+                <div class="carousel-item">
+                    <div class= "overlay-image" style="background-image:url(/static/images/oandd2.jpeg);"></div>
+                    <div class="container">
+                        <h2>Desdémone (1871). Alexandre Cabanel (French, 1823-1889). Oil on canvas.</h2>
+                        <p>Mournful, in white, hands clasped as if pleading for her life. </p>
+                    </div>
+                </div>
+                <!--third slide-->
+                <div class="carousel-item" >
+                    <div class="overlay-image" style="background-image:url(/static/images/oandd6.jpeg);"></div>
+                    <div class="container">
+                        <h2>Portrait of the Actress Margaret Hughes (c. 1645-1719). Circle of Sir Peter Lely (British, 1618–1680). Oil on canvas. </h2>
+                        <p>On December 8th, 1660, Desdemona was played by a female actress on an English stage for the first time. Margaret Hughes, regarded as the first professional English stage actress, was the first woman known to have played Desdemona. </p>
+                    </div>
+                </div>
+
+                <div class="carousel-item" >
+                    <div class="overlay-image" style="background-image:url(/static/images/oandd7.png);"></div>
+                    <div class="container">
+                        <h2>Claire Wong as Desdemona. Directed by Ong Keng Sen, co-commissioned by the Telstra Adelaide Festival 2000 and the Singapore Arts Festival, courtesy of TheatreWorks (S) Ltd. Performance.</h2>
+                        <p>Singaporean director Ong Keng Sen synthesized traditional and contemporary forms of Asian performance art to respond to Othello in a unique way. Haunting and eerie, the production's shift to focus on Desdemona reveals a new cultural lens through which to look at Shakespeare.</p>
+                    </div>
+                </div>
+                <div class="carousel-item" >
+                    <div class="overlay-image" style="background-image:url(/static/images/oandd8.jpg);"></div>
+                    <div class="container">
+                        <h2> O (2001). Directed by Tim Blake Nelson. Romantic thriller film.</h2>
+                        <p>The themes of jealousy and possession are soaked in sex, violence, and drugs before being reshaped for the modern consciousness in this modern adaptation set in high school. </p>
+                    </div>
+                </div>
+                <!--the next/prev buttons going to the next and previous image!-->
+                <a href="#myCarousel" class="carousel-control-prev" role="button" data-bs-slide="prev">
+                    <span class="sr-only"></span>
+                    <span class="carousel-control-prev-icon"
+                    aria-hidden="true"></span>
+                </a>
+                <a href="#myCarousel" class="carousel-control-next" role="button" data-bs-slide="next">
+                    <span class="sr-only"></span>
+                    <span class="carousel-control-next-icon"
+                    aria-hidden="true"></span>
+                </a>
+            </div>
         </div>
-        <div class="carousel-inner">
-            <div class="carousel-item active" style="background-image:url(/static/images/oandd1.jpeg);">
-                <div class="container">
-                    <h1>Example Headline</h1>
-                    <p>peebis</p>
-                    <a href="#" class = "btn btn-lg btn-primary">
-                        Sign up today
-                    </a>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <div class="container">
-                    <h1>Example Headline</h1>
-                    <p>poobis</p>
-                    <a href="#" class = "btn btn-lg btn-primary">
-                        Sign up today
-                    </a>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <div class="container">
-                    <h1>Example Headline</h1>
-                    <p>poobis</p>
-                    <a href="#" class = "btn btn-lg btn-primary">
-                        Sign up today
-                    </a>
-                </div>
-            </div>
-            <a href="#myCarousel" class="carousel-control-prev" role="button" data-bs-slide="prev">
-                <span class="sr-only"></span>
-                <span class="carousel-control-prev-icon"
-                aria-hidden="true"></span>
-            </a>
-            <a href="#myCarousel" class="carousel-control-next" role="button" data-bs-slide="prev">
-                <span class="sr-only"></span>
-                <span class="carousel-control-next-icon"
-                aria-hidden="true"></span>
-            </a>
+
+        <!--This is where I will talk about the analysis + motivation + reflection + junk-->
+        <div class="overflow-auto">
+            <h1>Desdemona in Othello</h1>
+            <section>
+                <h2>Intent</h2>
+                <p>Here is where I will talk about why I chose to make this website.
+                Here is where I will talk about why I chose to make this website.
+                Here is where I will talk about why I chose to make this website.
+                Here is where I will talk about why I chose to make this website.
+                Here is where I will talk about why I chose to make this website.
+                Here is where I will talk about why I chose to make this website.
+                </p>
+            </section>
+
+            <section>
+                <h2>Violent Masculinity and the Feminine Threat</h2>
+                <p>Here is where I will talk about masculine violence, fear of femininity, sexual agency, blah blah blah.
+                Here is where I will talk about masculine violence, fear of femininity, sexual agency, blah blah blah.
+                Here is where I will talk about masculine violence, fear of femininity, sexual agency, blah blah blah.
+                Here is where I will talk about masculine violence, fear of femininity, sexual agency, blah blah blah.
+                Here is where I will talk about masculine violence, fear of femininity, sexual agency, blah blah blah.
+                Here is where I will talk about masculine violence, fear of femininity, sexual agency, blah blah blah.
+                Here is where I will talk about masculine violence, fear of femininity, sexual agency, blah blah blah.
+                </p>
+            </section>
+
+            <section>
+                <h2>Violence Against Women in Media</h2>
+                <p> Here is where I will write about the normalization of violence against women in media. 
+                    Here is where I will write about the normalization of violence against women in media.
+                    Here is where I will write about the normalization of violence against women in media.
+                    Here is where I will write about the normalization of violence against women in media.
+                    Here is where I will write about the normalization of violence against women in media.
+                </p>
+            </section>
+
+            <section>
+                <h2>Violence Against Women IRL</h2>
+                <p> Here is where I will talk about the normalization of violence against women irl.
+                    Here is where I will talk about the normalization of violence against women irl. 
+                    Here is where I will talk about the normalization of violence against women irl. 
+                    Here is where I will talk about the normalization of violence against women irl. 
+                    Here is where I will talk about the normalization of violence against women irl. 
+                    Here is where I will talk about the normalization of violence against women irl. 
+                    Here is where I will talk about the normalization of violence against women irl. 
+                </p>
+
+
+            </section>
         </div>
     </div>
+{% endblock %}
         
-        
-
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>   
-  </body>
-</html>
