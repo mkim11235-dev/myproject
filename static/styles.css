@@ -1,5 +1,70 @@
-.navbar-brand{
-    font-family: Lugrasimo;
-    color: blueviolet;
+ .carousel-item {
+     position: relative;
+     height: 32rem;
+     color: white;
+     background-position: left;
+     background-size: cover;
+     background: black;
 
+ }
+
+ /*styles for each container */
+ .container {
+     position: absolute;
+     bottom: 0;
+     left: 0;
+     right: 0;
+     padding-bottom: 50px;
+ }
+
+ /*styles for overlay image*/
+ .overlay-image {
+     position: absolute;
+     bottom: 0;
+     left: 0;
+     right: 0;
+     top: 0;
+     background-position: center;
+     background-size: contain;
+     background-repeat: no-repeat;
+     width: 100%;
+ }
+
+ .overflow-auto {
+     margin: 0 auto;
+     width: 50%;
+     margin-top: 5%
+ }
+
+ h1 {
+     text-align: center;
+     font-family: 'Lugrasimo';
+ }
+
+ p {
+     font-family: 'Cormorant Garamond';
+     font-size: 1.5em;
+ }
+
+ h2 {
+     font-family: 'Cormorant Garamond';
+     font-weight: 700;
+ }
+
+ .navbar-brand {
+     font-family: Lugrasimo;
+
+ }
+ .nav-item {
+    font-family: 'Cormorant Garamond';
+ }
+ .items-in-list {
+    font-family: 'Cormorant Garamond';
+ }
+ .article-subsection {
+    margin-bottom: 10em;
+}
+.title-1 {
+    margin-bottom: 10em;
+    margin-top: 10em;
 }
