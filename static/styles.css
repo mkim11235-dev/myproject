@@ -53,6 +53,7 @@
 
  .navbar-brand {
      font-family: Lugrasimo;
+     justify-content: center;
 
  }
  .nav-item {
@@ -65,6 +66,15 @@
     margin-bottom: 10em;
 }
 .title-1 {
-    margin-bottom: 10em;
-    margin-top: 10em;
+    margin-bottom: 5em;
+    margin-top: 5em;
+}
+.quote-subsection {
+    font-family: 'Cormorant Garamond';
+    margin-bottom: 2.5em;
+    margin-top: 2.5em;
+}
+
+.container-fluid {
+    margin: auto;
 }
