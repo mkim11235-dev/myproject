@@ -1,3 +1,6 @@
+#myCarousel {
+    box-shadow: 1em;
+}
  .carousel-item {
      position: relative;
      height: 32rem;
@@ -29,11 +32,21 @@
      background-repeat: no-repeat;
      width: 100%;
  }
-
+ .overflow-auto-1 {
+    margin: 0 auto;
+    width: 75%;
+    background-color: #C6D8D3;
+    padding: 1%;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 2)
+ }
  .overflow-auto {
      margin: 0 auto;
-     width: 50%;
-     margin-top: 5%
+     width: 75%;
+     margin-top: 5%;
+     background-color: #C6D8D3;
+     padding: 5%;
+     box-shadow: 0px 4px 8px rgba(0, 0, 0, 2)
+
  }
 
  h1 {
@@ -45,6 +58,10 @@
      font-family: 'Cormorant Garamond';
      font-size: 1.5em;
  }
+ .statistics {
+    font-family: 'Cormorant Garamond';
+     font-size: 1.5em;
+ }
 
  h2 {
      font-family: 'Cormorant Garamond';
@@ -53,22 +70,20 @@
 
  .navbar-brand {
      font-family: Lugrasimo;
-     justify-content: center;
+     padding-right: 45em;
 
  }
  .nav-item {
     font-family: 'Cormorant Garamond';
+    font-size: 1.5em;
  }
  .items-in-list {
     font-family: 'Cormorant Garamond';
  }
  .article-subsection {
-    margin-bottom: 10em;
-}
-.title-1 {
-    margin-bottom: 5em;
     margin-top: 5em;
 }
+
 .quote-subsection {
     font-family: 'Cormorant Garamond';
     margin-bottom: 2.5em;
@@ -77,4 +92,18 @@
 
 .container-fluid {
     margin: auto;
+}
+
+#lineChart1 {
+    margin: auto;
+}
+.custom-navbar{
+    background-color: #C6D8D3;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 2);
+}
+#myCarousel {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 2);
+}
+.graph {
+    padding-top: 1em;
 }

@@ -41,14 +41,20 @@ def data():
     gf_df['Female Partner'] = gf_df[['Common-Law Wife','Ex-Wife', 'Girlfriend', 'Wife']].sum(axis=1)
     df_2 = gf_df.drop(['Common-Law Wife','Ex-Wife', 'Girlfriend', 'Wife'], axis=1)
     data = df_2
-    labels = df_2['data_year']
-    values = df_2['Female Partner']
+    print(df_2)
 
-    '''bf_df= df.drop(['Friend','Acquaintance','Girlfriend', 'Brother', 'Common-Law Wife','Daughter','Employee','Employer','Ex-Wife','Father','Homosexual Relationship','Wife', 'In-Law', 'Mother', 'Neighbor', 'Other Family', 'Other - known to victim', 'Sister', 'Son', 'Stepdaugther', 'Stepfather', 'Stepson', 'Stepmother', 'Stranger', 'Unknown'], axis=1)
+    labels = df_2['data_year'].tolist()
+    values = df_2['Female Partner'].tolist()
+
+    bf_df= df.drop(['Friend','Acquaintance','Girlfriend', 'Brother', 'Common-Law Wife','Daughter','Employee','Employer','Ex-Wife','Father','Homosexual Relationship','Wife', 'In-Law', 'Mother', 'Neighbor', 'Other Family', 'Other - known to victim', 'Sister', 'Son', 'Stepdaugther', 'Stepfather', 'Stepson', 'Stepmother', 'Stranger', 'Unknown'], axis=1)
     bf_df['Male Partner'] = bf_df[['Common-Law Husband','Ex-Husband', 'Boyfriend', 'Husband']].sum(axis=1)
-    df_3 = bf_df.drop(['Common-Law Husband','Ex-Husband', 'Boyfriend', 'Husband'], axis=1)'''
+    df_3 = bf_df.drop(['Common-Law Husband','Ex-Husband', 'Boyfriend', 'Husband'], axis=1)
 
-    return render_template("data.html", news_results = news_results, labels=labels,values=values)
+    labels_1 = df_3['data_year'].tolist()
+    values_1 = df_3['Male Partner'].tolist()
+
+
+    return render_template("data.html", news_results = news_results, labels=labels,values=values, labels_1=labels_1, values_1=values_1)
 
 
 

@@ -7,29 +7,70 @@ Landing
 {% block main %}
 
   <h1>Data</h1>
-  {{labels}}
-  {{values}}
-    <canvas id="lineChart" width="900" height="400"></canvas>
+  <div class="overflow-auto-1">
+    <p>
+      This page was created using statistics from the FBI Crime Data Explorer, and its intent is to call attention to patterns of intimate 
+      partner violence through time.
+    </p>
+
+  </div>
+  <div class="chart-container">
+    <canvas id="lineChart1" width="1100" height="600"></canvas>
+  </div>
+  <div class = "graph">
     <script>
-      
-      var ctx = document.getElementById("lineChart").getContext("2d");
-      var lineChart = new Chart(ctx, {
+      var ctx1 = document.getElementById("lineChart1").getContext("2d");
+      var lineChart1 = new Chart(ctx1, {
         type: "line",
         data: {
           labels: {{ labels | safe }},
           datasets: [
             {
-              label: "Data points",
+              label: "Female Victims of Homicide by a Male Partner",
               data: {{ values | safe }},
               fill: false,
               borderColor: "rgb(75,192,192)", // Removed colon
+              lineTension: 0.1
+            },
+            {
+              label: "Male Victims of Homicide by a Female Partner",
+              data: {{ values_1 | safe }},
+              fill: false,
+              borderColor: "rgb(255, 99, 132)", // Removed colon
               lineTension: 0.1
             }
           ]
         },
         options: {
-          responsive: false
-        } // Added comma here
+          responsive: false,
+          title: {
+            display: true,
+            text: 'Female Victims of Homicide by a Male Partner'
+          },
+          scales: {
+            x: {
+              title: {
+                display: true,
+                text: 'Year (1980-2022)'
+              },
+            },
+            y: {
+              title: {
+                display: true,
+                text: 'Number of Victims per Year'
+              },
+            }
+          }
+
+        }
       });
     </script>
+    <div class = "lament">
+      <h2></h2>
+    </div>
+      <div class="sources">
+        <h2>Data Source:</h2>
+        <a href="https://cde.ucr.cjis.gov/LATEST/webapp/#/pages/home">FBI Crime Data Explorer</a>
+      </div>
+  </div>
 {% endblock %}
